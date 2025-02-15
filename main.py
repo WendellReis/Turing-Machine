@@ -88,7 +88,6 @@ def main(args):
     m.showTM()
     m.eval()
     
-
 if __name__ == "__main__":
     assert len(sys.argv) != 1, "Arquivo de entrada nao especificado."
     main(sys.argv[1])
