@@ -15,8 +15,11 @@ class TM:
         self.QREJ = data['estados_rejeicao']
         self.words = data['palavras']
 
-    def inicialize(self):
+    def inicialize(self,w):
         self.tape = ['$']
+        for c in w:
+            self.tape.append(c)
+        self.tape.append('?')
         self.index = 0
     
     def showTM(self):
@@ -37,21 +40,49 @@ class TM:
         print(f"QREJ = {self.QREJ}")
 
 
-    def process(self,w,s = None):
+    def showTape(self):
+        for e in self.tape:
+            if e != '?':
+                print(e,end='')
+
+    def process(self,idx = 0,s = None):
         if s == None:
             s = self.q0
         
+        if s in self.QREJ:
+            return False
+        elif s in self.QACC:
+            return True
         
-
+        if idx == len(self.tape):
+            self.tape.append('?')
+        
+        c = self.tape[idx]
+        t = self.TR[s]
+        aux = False
+        for k in t:
+            if k[0] == c:
+                aux = True
+                self.tape[idx] = k[1]
+                idx = idx + (1 if k[2] == 'R' else -1)
+                s = k[3]
+                break
+        
+        if not aux:
+            return False
+        return self.process(idx,s)
+            
+        
     def eval(self):
         for w in self.words:
-            self.inicialize()
-            print(f"{w}: {"YES" if self.process(w) else "NO"}")
+            self.inicialize(w)
+            print(f"{w}: {"YES" if self.process() else "NO"}")
         
 def main(args):
     assert os.path.exists(args), "Arquivo especificado nao existe."
     m = TM(args)
     m.showTM()
+    m.eval()
     
 
 if __name__ == "__main__":
