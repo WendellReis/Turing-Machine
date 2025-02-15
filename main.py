@@ -76,7 +76,9 @@ class TM:
     def eval(self):
         for w in self.words:
             self.inicialize(w)
-            print(f"{w}: {"YES" if self.process() else "NO"}")
+            print(f"{w}: {"YES" if self.process() else "NO"} | ",end='')
+            self.showTape()
+            print()
         
 def main(args):
     assert os.path.exists(args), "Arquivo especificado nao existe."
