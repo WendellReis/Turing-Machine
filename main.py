@@ -14,7 +14,6 @@ class TM:
         self.QACC = data['estados_aceitacao']
         self.QREJ = data['estados_rejeicao']
         self.words = data['palavras']
-        self.inicialize()
 
     def inicialize(self):
         self.tape = ['$']
@@ -36,7 +35,18 @@ class TM:
         print(f"q0 = {self.q0}")
         print(f"QACC = {self.QACC}")
         print(f"QREJ = {self.QREJ}")
+
+
+    def process(self,w,s = None):
+        if s == None:
+            s = self.q0
         
+        
+
+    def eval(self):
+        for w in self.words:
+            self.inicialize()
+            print(f"{w}: {"YES" if self.process(w) else "NO"}")
         
 def main(args):
     assert os.path.exists(args), "Arquivo especificado nao existe."
