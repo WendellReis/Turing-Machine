@@ -6,6 +6,7 @@ class TM:
     def __init__(self, args):
         with open(args) as arc:
             data = json.load(arc)
+        self.desc = data['descricao']
         self.Q = data['estados']
         self.E = data['alfabeto']
         self.T = data['simbolos']
@@ -23,6 +24,7 @@ class TM:
         self.index = 0
     
     def showTM(self):
+        print("Descricao: " + self.desc)
         print(f"Q = {self.Q}")
         print(f"E = {self.E}")
         print(f"T = {self.T}")

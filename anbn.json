@@ -1,4 +1,5 @@
 {
+    "descricao": "TM que reconhece palavras a^n.b^n",
     "alfabeto": ["a","b"],
     "simbolos": ["A","B"],
     "estados": ["1","2","3","4","5","6"],

@@ -8,6 +8,7 @@ Este projeto conciste na implementação de um algortimo que simula uma Máquina
 ## Guia de Uso
 A execução do programa depende da passagem do nome de um arquivo em formato .json que deverá conter todas as informações de uma TM: 
 
+- **descricao**: descrição (não obrigatória) da TM.
 - **alfabeto**: vetor contendo os caracteres aceitos pela linguagem considerando **'&'** como caracter vazio.
 - **simbolos**: vetor contendo os caracteres que a TM consegue escrever na fita.
 - **estados: vetor** contendo o nome dos estados.
@@ -15,7 +16,7 @@ A execução do programa depende da passagem do nome de um arquivo em formato .j
 - **estados_aceitacao**: vetor contendo os estados de aceitação
 - **estados_rejeicao**: vetor contendo os estados de rejeição
 - **transicoes**: dicionário onde cada chave representa um estado e o seu valor concista em uma lista de transições do tipo **(X,Y,D,S)**, ou seja, uma transição que lê o caracter **X**, escreve **Y**, descoloca a cabeça da TM para a direção **D** (esquerda (L) ou direita (R)) e passa para o estado **S**. Estados sem transições devem possuir valor de lista vazia ([]).
-- **palavras**: vetor contendo um conjunto de palavras que serão processadas pela TM.
+- **palavras**: uma lista (pode ser vazia) contendo um conjunto de palavras que serão processadas pela TM.
 
 O presente repositório possui arquivos .json que exemplificam a forma correta que um autômato deve ser descrito. É possível executar um teste com:
 
