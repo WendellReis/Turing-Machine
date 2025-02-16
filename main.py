@@ -9,8 +9,8 @@ class TM:
         self.desc = data['descricao']
         self.Q = data['estados']
         self.E = data['alfabeto']
-        self.T = data['simbolos']
-        self.TR = data['transicoes']
+        self.S = data['simbolos']
+        self.T = data['transicoes']
         self.q0 = data['estado_inicial']
         self.QACC = data['estados_aceitacao']
         self.QREJ = data['estados_rejeicao']
@@ -27,12 +27,12 @@ class TM:
         print("Descricao: " + self.desc)
         print(f"Q = {self.Q}")
         print(f"E = {self.E}")
-        print(f"T = {self.T}")
+        print(f"S = {self.S}")
 
-        print("TR = [")
-        for k in self.TR:
+        print("T = [")
+        for k in self.T:
             print(f"\t{k}: [")
-            for t in self.TR[k]:
+            for t in self.T[k]:
                 print(f"\t\t{t},")
             print("\t]")
         print("]")
@@ -60,7 +60,7 @@ class TM:
             self.tape.append('?')
         
         c = self.tape[idx]
-        t = self.TR[s]
+        t = self.T[s]
         aux = False
         for k in t:
             if k[0] == c:
