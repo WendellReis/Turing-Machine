@@ -3,7 +3,7 @@
 ## Overview
 **Criado por: Wendell Reis Milani Matias**
 
-Este projeto conciste na implementação de um algortimo que simula uma Máquina de Turing (TM). É motivado pela disciplina de Linguagens Formais e Autômatos (LFA) ofertada pelo CEFET-MG Campus Leopoldina.
+Este projeto conciste na implementação de um algortimo que simula uma Máquina de Turing (TM) com fita semi-infinita. É motivado pela disciplina de Linguagens Formais e Autômatos (LFA) ofertada pelo CEFET-MG Campus Leopoldina.
 
 ## Guia de Uso
 A execução do programa depende da passagem do nome de um arquivo em formato .json que deverá conter todas as informações de uma TM: 
