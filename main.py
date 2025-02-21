@@ -64,6 +64,8 @@ class TM:
         
         if idx == len(self.tape):
             self.tape.append(None)
+        elif idx == -1:
+            return False
         
         c = self.tape[idx]
         t = self.T[s]
@@ -82,6 +84,7 @@ class TM:
             
         
     def eval(self):
+        print("\nResultado da Avaliacao:")
         for w in self.words:
             self.inicialize(w)
             print(f"{w}: {"YES" if self.process() else "NO"} | ",end='')

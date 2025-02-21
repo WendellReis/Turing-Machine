@@ -1,0 +1,56 @@
+{
+    "descricao": "TM que reconhece L = {wwR | w ∈ {a, b}*}",
+    "alfabeto": ["a","b"],
+    "simbolos": ["K"],
+    "estados": ["1","2","3","4","5","6","7"],
+    "estado_inicial":"1",
+    "estados_aceitacao": ["7"],
+    "estados_rejeicao": [],
+    "transicoes": {
+        "1": [
+            ["$","$","R","1"],
+            ["a","K","R","2"],
+            ["b","K","R","6"],
+            ["K","K","R","7"],
+            [null,null,"R","7"]
+            
+        ],
+        "2": [
+            ["a","a","R","2"],
+            ["b","b","R","2"],
+            ["K","K","L","3"],
+            [null,null,"L","3"]
+        ],
+        "3": [
+            ["a","K","L","4"]
+        ],
+        "4": [
+            ["a","a","L","4"],
+            ["b","b","L","4"],
+            ["K","K","R","1"]
+        ], 
+        "5": [
+            ["b","K","L","4"]
+        ],
+        "6": [
+            ["a","a","R","6"],
+            ["b","b","R","6"],
+            ["K","K","L","5"],
+            [null,null,"L","5"]
+        ]
+
+    },
+    "palavras":[
+        "aaaa",
+        "bbaabb",
+        "bbbaabbb",
+        "aabbaa",
+        "aa",
+        "bb",
+        "bbabbbbabb",
+        "aba",
+        "baba",
+        "aaaab",
+        "babababab"
+    ]
+}
