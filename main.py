@@ -22,6 +22,10 @@ class TM:
             self.tape.append(c)
         self.tape.append(None)
         self.index = 0
+
+        for s in self.Q:
+            if not s in self.T:
+                self.T[s] = []
     
     def showTM(self):
         print("Descricao: " + self.desc)
