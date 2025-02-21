@@ -20,7 +20,7 @@ class TM:
         self.tape = ['$']
         for c in w:
             self.tape.append(c)
-        self.tape.append('?')
+        self.tape.append(None)
         self.index = 0
     
     def showTM(self):
@@ -44,8 +44,10 @@ class TM:
 
     def showTape(self):
         for e in self.tape:
-            if e != '?':
+            if e != None:
                 print(e,end='')
+            else:
+                print(' ',end='')
 
     def process(self,idx = 0,s = None):
         if s == None:
@@ -57,7 +59,7 @@ class TM:
             return True
         
         if idx == len(self.tape):
-            self.tape.append('?')
+            self.tape.append(None)
         
         c = self.tape[idx]
         t = self.T[s]
